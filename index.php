@@ -25,6 +25,19 @@ values('$nume','$prenume','$telefon','$datan','$email','$cnp','$varsta','$casato
         echo "Eroare: " . $conn->error;
     }
 }
+
+
+
+if(isset($_GET['delete'])) {
+
+    $id=$_GET['id'];
+
+    $sql="delete from angajati where id='$id'";
+    
+    $conn->query($sql);
+
+}
+
 ?>
 
 
@@ -71,9 +84,9 @@ if($result->num_rows > 0) {
         echo "</td>";
 
         echo "<td>";
-
+        echo "<a href='?delete&id=$id'>DELETE</a>";
         echo "</td>";
-
+        
         echo '</tr>';
         
     }
