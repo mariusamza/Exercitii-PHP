@@ -1,11 +1,7 @@
 <?php
-
 include_once('config.php');
-
 $sql = "select * from angajati";
-
 $result = $conn->query($sql);
-
 ?>
 
 <table border=1 width=100%>
